@@ -17,8 +17,11 @@ Predicting render times for Arnold renderer scenes
     * Total GHz number: `cores * frequency`
     * RAM size
     * RAM type (DDR*)
+    * RAM frequency
     * SSD?
     * CPU model
+    * Hyperthreading
+    * CPU cache
 
 <br>
 
