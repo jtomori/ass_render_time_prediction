@@ -1,0 +1,115 @@
+standard_surface
+{  
+  name left_srf
+  base_color 0 0 1
+  specular 0
+}
+
+standard_surface 
+{
+  name right_srf
+  base_color 1 0 0
+  specular 0
+}
+
+standard_surface 
+{
+  name bottom_srf
+  base_color 1 1 1
+  specular 0
+}
+
+standard_surface 
+{
+  name top_srf
+  base_color 1 1 1
+  specular 0
+}
+
+standard_surface 
+{
+  name back_srf
+  base_color 1 1 1
+  specular 0
+}
+
+standard_surface
+{
+  name pimp
+  metalness 1
+}
+
+polymesh
+{
+  name left
+  nsides 1 1 BYTE 4
+  vidxs 4 1 LONG 0 1 2 3
+  nidxs 4 1 LONG 0 0 0 0
+  vlist 12 1 FLOAT -2.0 -2.0 8.0   -2.0 2.0 8.0   -2.0 2.0 -2.0  -2.0 -2.0 -2.0
+  nlist 3 1 FLOAT 1.0 0 0 
+  shader left_srf
+}
+
+polymesh
+{
+  name right
+  nsides 1 1 BYTE 4
+  vidxs 4 1 LONG 0 1 2 3
+  nidxs 4 1 LONG 0 0 0 0
+  vlist 12 1 FLOAT 2.0 -2.0 8.0   2.0 2.0 8.0   2.0 2.0 -2.0  2.0 -2.0 -2.0
+  nlist 3 1 FLOAT -1.0 0 0 
+  shader right_srf
+}
+
+polymesh
+{
+  name top
+  nsides 1 1 BYTE 4
+  vidxs 4 1 LONG 0 1 2 3
+  nidxs 4 1 LONG 0 0 0 0
+  vlist 12 1 FLOAT -2.0 2.0 8.0   2.0 2.0 8.0   2.0 2.0 -2.0  -2.0 2.0 -2.0
+  nlist 3 1 FLOAT 0.0 -1 0 
+  shader top_srf
+}
+
+polymesh
+{
+  name bottom
+  nsides 1 1 BYTE 4
+  vidxs 4 1 LONG 0 1 2 3
+  nidxs 4 1 LONG 0 0 0 0
+  vlist 12 1 FLOAT -2.0 -2.0 8.0   2.0 -2.0 8.0   2.0 -2.0 -2.0  -2.0 -2.0 -2.0
+  nlist 3 1 FLOAT 0.0 1 0 
+  shader bottom_srf
+}
+
+polymesh
+{
+  name back
+  nsides 1 1 BYTE 4
+  vidxs 4 1 LONG 0 1 2 3
+  nidxs 4 1 LONG 0 0 0 0
+  vlist 12 1 FLOAT -2.0 -2.0 -2.0   2.0 -2.0 -2.0   2.0 2.0 -2.0  -2.0 2.0 -2.0
+  nlist 3 1 FLOAT 0.0 0 1 
+  shader back_srf
+}
+
+sphere
+{
+ shader pimp
+ radius 1
+ center 0 -1 0
+}
+
+quad_light
+{
+  name arealight
+  vertices 4 1 POINT -1.0 1.9 1.0   -1.0 1.9 0.0  1.0 1.9 0.0   1.0 1.9 1.0
+  color 0.9 0.9 1.0
+  intensity 1
+  exposure 6
+  samples 3
+  normalize on
+}
+
+
