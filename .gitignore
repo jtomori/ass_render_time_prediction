@@ -2,6 +2,7 @@
 backup
 *.exr
 *_bak*
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
