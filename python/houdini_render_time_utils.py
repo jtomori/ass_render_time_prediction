@@ -35,6 +35,6 @@ def save_render_time(file=None):
 
     render_time = timer_duration()
     if render_time:
-        print "Render took: {} seconds".format(render_time)
+        print "Render took: {} seconds, machine: {}, user: {}".format(render_time, hou.getenv("COMPUTERNAME"), hou.getenv("USERNAME"))
     else:
         print "None was returned"
