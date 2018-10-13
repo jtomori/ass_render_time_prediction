@@ -45,7 +45,8 @@ def client_cpu_info(payload):
     payload(dict): render client information
     return(dict): payload incl. cpu info
     """
-    system_info_output = subprocess.getoutput('C://Users//shosseini//Desktop//github//ass_render_time_prediction//utils//GetSys64.exe')
+    getsys_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'utils')
+    system_info_output = subprocess.getoutput(os.path.join(getsys_path, 'GetSys64.exe'))
     for feat, pat in re_map.items():
         pattern = r"{0}.*".format(pat)
         ret = re.findall(pattern, system_info_output)[0]
@@ -109,7 +110,6 @@ def save_render_time(file=None, payload = {}):
     """
     timer_duration(payload)
     client_cpu_info(payload)
-    print (payload)
     with open('{}.json'.format(file), 'w') as outfile:
         json.dump(payload, outfile)
 
