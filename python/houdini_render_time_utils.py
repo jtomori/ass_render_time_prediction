@@ -2,11 +2,12 @@
 Collection of scripts which are called by Houdini renders.
 """
 
-#import hou
+import os
+import hou
+import json
 import time
 import cpuinfo
 import subprocess
-import json
 #out  =  subprocess.getoutput('wmic MEMORYCHIP get BankLabel,DeviceLocator,Capacity,Tag, MemoryType')
 #print (out)
 
@@ -48,6 +49,17 @@ def timer_duration(payload, attrib_name="timer_start"):
         payload['render_time'] = time.time() - getattr(hou.session, attrib_name)
     except AttributeError as e:
         return None
+
+def set_json_file_path():
+    """
+    todo
+    """
+
+    me = hou.pwd()
+    out_img = me.parm("ar_picture").eval()
+    out_img = ".".join( out_img.split(".")[:-1] )
+
+    return out_img
 
 def save_render_time(file=None, payload = {}):
     """
