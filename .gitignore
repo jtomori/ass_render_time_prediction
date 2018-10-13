@@ -3,6 +3,7 @@ backup
 *.exr
 *_bak*
 .vscode
+scenes/render
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
