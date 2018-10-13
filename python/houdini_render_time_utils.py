@@ -24,8 +24,7 @@ def _client_cpu_info(payload):
     """
     if not cpuinfo.cpu.info:
         payload['processor_name'] = 'failed'
-        return payload
-
+        return
     if 'ProcessorNameString' in cpuinfo.cpu.info[0]:
         _processor = cpuinfo.cpu.info[0]['ProcessorNameString']
         payload['processor_name'], indicators  = _processor, _processor.split()
@@ -35,9 +34,6 @@ def _client_cpu_info(payload):
         payload['rev'] = indicators[3]
         payload['v'] = float(indicators[4].replace('v', ''))
         payload['abs_GHz'] = payload['logical_processors'] * payload['GHz']
-
-    return payload
-
 
 def client_cpu_info(payload):
     """
@@ -95,13 +91,12 @@ def timer_duration(payload, attrib_name="timer_start"):
 
 def set_json_file_path():
     """
-    todo
+    todo:
+    return:
     """
-
     me = hou.pwd()
     out_img = me.parm("ar_picture").eval()
     out_img = ".".join( out_img.split(".")[:-1] )
-
     return out_img
 
 def save_render_time(file=None, payload = {}):
@@ -112,6 +107,3 @@ def save_render_time(file=None, payload = {}):
     client_cpu_info(payload)
     with open('{}.json'.format(file), 'w') as outfile:
         json.dump(payload, outfile)
-
-
-save_render_time()
