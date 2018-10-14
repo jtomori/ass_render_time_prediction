@@ -14,9 +14,10 @@ re_map = {'Machine': 'Machine: ',
             'CPU':'CPU  : ',
             'Cache': 'Cache: ',
             'Number of cores':'Number of cores: ',
-            'Number of threads': 'Number of threads: '}
+            'Number of threads': 'Number of threads: ',
+            'Memory':'Memory   :'}
 
-def _client_cpu_info(payload):
+def _client_cpu_info_linux(payload):
     """
     Get cpu information and relevant features
     payload(dict): render client information
@@ -35,6 +36,12 @@ def _client_cpu_info(payload):
         payload['v'] = float(indicators[4].replace('v', ''))
         payload['abs_GHz'] = payload['logical_processors'] * payload['GHz']
 
+
+def kb2mb(input_kilobyte):
+    megabyte = float(0.000976562)
+    convert_mb = megabyte * input_kilobyte
+    return convert_mb
+
 def client_cpu_info(payload):
     """
     Get cpu information and relevant features using GetSys64.exe
@@ -42,6 +49,8 @@ def client_cpu_info(payload):
     return(dict): payload incl. cpu info
     """
     getsys_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'utils')
+    if not os.path.exists(getsys_path):
+        return
     system_info_output = subprocess.getoutput(os.path.join(getsys_path, 'GetSys64.exe'))
     for feat, pat in re_map.items():
         pattern = r"{0}.*".format(pat)
@@ -51,20 +60,24 @@ def client_cpu_info(payload):
             process_indicators = ret.split()
             payload['sockets'] = float(process_indicators[0])
             payload['MHz'] = float(process_indicators[-2])
+            #todo: disc, processor name as feat?
             payload['id'] = str(' '.join(process_indicators[3:5]))
             payload['v'] = float(process_indicators[5].replace('v', ''))
         elif 'Cache' in ret:
             ret = ret.replace(pat, '')
             cache_indicators = ret.split()
-            payload['cache KB'] = float(cache_indicators[0])+\
-                               float(cache_indicators[4])+\
-                               float(cache_indicators[8])
+            payload['cache MB'] = kb2mb((float(cache_indicators[0])+\
+                                        float(cache_indicators[4])+\
+                                        float(cache_indicators[8])))
         elif 'Number of cores' == feat:
             cores_indicators = ret.replace(pat, '')
             payload['cores'] = float(cores_indicators)
         elif 'Number of threads' == feat:
             threads_indicators = ret.replace(pat, '')
             payload['threads'] = float(threads_indicators)
+        elif 'Memory' == feat:
+            memory_indicators = ret.replace(pat, '').replace(' MB', '')
+            payload['memory MB'] = float(memory_indicators)
 
 def timer_start(attrib_name="timer_start"):
     """
@@ -105,5 +118,6 @@ def save_render_time(file=None, payload = {}):
     """
     timer_duration(payload)
     client_cpu_info(payload)
+    print (payload)
     with open('{}.json'.format(file), 'w') as outfile:
         json.dump(payload, outfile)
