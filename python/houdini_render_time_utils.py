@@ -58,23 +58,25 @@ def client_cpu_info(payload):
         if 'CPU' == feat:
             ret = ret.replace(pat, '')
             process_indicators = ret.split()
-            payload['sockets'] = float(process_indicators[0])
-            payload['MHz'] = float(process_indicators[-2])
+            #payload['sockets'] = float(process_indicators[0])
+            mhz = float(process_indicators[-2])
             #todo: disc, processor name as feat?
             payload['id'] = str(' '.join(process_indicators[3:5]))
-            payload['v'] = float(process_indicators[5].replace('v', ''))
+            #payload['v'] = float(process_indicators[5].replace('v', ''))
         elif 'Cache' in ret:
             ret = ret.replace(pat, '')
             cache_indicators = ret.split()
-            payload['cache MB'] = kb2mb((float(cache_indicators[0])+\
-                                        float(cache_indicators[4])+\
-                                        float(cache_indicators[8])))
+            payload['cache MB L1'] = kb2mb(float(cache_indicators[0]))
+            payload['cache MB L2'] = kb2mb(float(cache_indicators[4]))
+            payload['cache MB L3'] = kb2mb(float(cache_indicators[8]))
+
         elif 'Number of cores' == feat:
             cores_indicators = ret.replace(pat, '')
-            payload['cores'] = float(cores_indicators)
+            #pass
+            #payload['cores'] = float(cores_indicators)
         elif 'Number of threads' == feat:
             threads_indicators = ret.replace(pat, '')
-            payload['threads'] = float(threads_indicators)
+            payload['total_GHz'] = float(threads_indicators)*mhz
         elif 'Memory' == feat:
             memory_indicators = ret.replace(pat, '').replace(' MB', '')
             payload['memory MB'] = float(memory_indicators)
