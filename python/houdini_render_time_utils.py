@@ -17,12 +17,13 @@ re_map = {'Machine': 'Machine: ',
             'Number of threads': 'Number of threads: ',
             'Memory':'Memory   :'}
 
-def _client_cpu_info_linux(payload):
+def _client_cpu_info_linux():
     """
     Get cpu information and relevant features
     payload(dict): render client information
     return(dict): payload incl. cpu info
     """
+    payload = {}
     if not cpuinfo.cpu.info:
         payload['processor_name'] = 'failed'
         return
@@ -31,10 +32,10 @@ def _client_cpu_info_linux(payload):
         payload['processor_name'], indicators  = _processor, _processor.split()
         payload['logical_processors'] = len(cpuinfo.cpu.info)
         payload['GHz'] = float(indicators[-1].replace('GHz', ''))
-        payload['model'] = indicators[1].replace('(R)', '')
-        payload['rev'] = indicators[3]
-        payload['v'] = float(indicators[4].replace('v', ''))
-        payload['abs_GHz'] = payload['logical_processors'] * payload['GHz']
+        #payload['model'] = indicators[1].replace('(R)', '')
+        #payload['rev'] = indicators[3]
+        #payload['v'] = float(indicators[4].replace('v', ''))
+        return payload['logical_processors'], indicators# * payload['GHz']
 
 
 def kb2mb(input_kilobyte):
@@ -51,7 +52,7 @@ def client_cpu_info(payload):
     getsys_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'utils')
     if not os.path.exists(getsys_path):
         return
-    system_info_output = subprocess.getoutput(os.path.join(getsys_path, 'GetSys64.exe'))
+    system_info_output = subprocess.check_output(os.path.join(getsys_path, 'GetSys64.exe'))
     for feat, pat in re_map.items():
         pattern = r"{0}.*".format(pat)
         ret = re.findall(pattern, system_info_output)[0]
@@ -75,11 +76,17 @@ def client_cpu_info(payload):
             #pass
             #payload['cores'] = float(cores_indicators)
         elif 'Number of threads' == feat:
-            threads_indicators = ret.replace(pat, '')
-            payload['total_GHz'] = float(threads_indicators)*mhz
+            threads_indicators, payload['id'] = _client_cpu_info_linux() #ret.replace(pat, '')
+            total_GHz = float(threads_indicators)
+        elif 'Machine' == feat:
+            machine = ret.replace(pat, '').replace('\r', "")
+            payload[feat] = str(machine)
         elif 'Memory' == feat:
             memory_indicators = ret.replace(pat, '').replace(' MB', '')
             payload['memory MB'] = float(memory_indicators)
+        
+    payload['total_GHz'] = total_GHz * mhz
+    return payload
 
 def timer_start(attrib_name="timer_start"):
     """
@@ -101,6 +108,7 @@ def timer_duration(payload, attrib_name="timer_start"):
 
     try:
         payload['render_time'] = time.time() - getattr(hou.session, attrib_name)
+        return payload
     except AttributeError as e:
         return None
 
@@ -114,12 +122,13 @@ def set_json_file_path():
     out_img = ".".join( out_img.split(".")[:-1] )
     return out_img
 
-def save_render_time(file=None, payload = {}):
+def save_render_time(file=None):
     """
     Saves render timwe into a file, this function should be in Post-Render script
     """
-    timer_duration(payload)
-    client_cpu_info(payload)
+    payload = {}
+    payload = timer_duration(payload)
+    payload = client_cpu_info(payload)
     print (payload)
     with open('{}.json'.format(file), 'w') as outfile:
         json.dump(payload, outfile)
