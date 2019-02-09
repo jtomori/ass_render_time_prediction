@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="render_time_prediction" label="Render time prediction">
+    <memberTool name="generate_parameters"/>
+    <memberTool name="additional_parms"/>
+  </toolshelf>
+
+  <tool name="generate_parameters" label="Generate Parameters" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import ass_prediction
+reload(ass_prediction)
+ass_prediction.HoudiniArnoldSamples.setParametersShelf()]]></script>
+  </tool>
+
+  <tool name="additional_parms" label="Get Additional Parms into JSON" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import ass_prediction
+reload(ass_prediction)
+ass_prediction.HoudiniArnoldSamples.getAdditionalInfoDictShelf()]]></script>
+  </tool>
+</shelfDocument>
