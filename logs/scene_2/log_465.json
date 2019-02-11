@@ -1,0 +1,277 @@
+{
+    "JSON log version": 2,
+    "Arnold version": {
+        "arch": "5",
+        "major": "2",
+        "minor": "2",
+        "fix": "1",
+        "git hash": "2dff6c07",
+        "full": "Arnold 5.2.2.1 [2dff6c07] windows icc-17.0.2 oiio-2.1.0 osl-1.11.0 vdb-4.0.0 clm-1.0.3.513 rlm-12.4.2 2019/01/10 05:42:47"
+    },
+    "timestamp": "2019-02-09T19:17:02Z",
+    "hostname": "chihuahua",
+    "OS": "Windows 8 (version 6.2, build 9200)",
+    "CPU info": {
+        "name": "Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz",
+        "processors": 2,
+        "physical cores": 32,
+        "logical cores": 64,
+        "available cores": 64,
+        "memory capacity": {
+            "bytes": 137063309312
+        },
+        "full": "2 x Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz (32 cores, 64 logical) with 130713MB"
+    },
+    "GPU driver version": 411.70001220703127,
+    "GPU info": {
+        "device ID": 0,
+        "name": "GeForce GTX 1080 Ti",
+        "processor MHz": 1582,
+        "compute capability": {
+            "major": 6,
+            "minor": 1
+        },
+        "memory capacity": {
+            "bytes": 11811160064
+        },
+        "free memory": {
+            "bytes": 6857859072
+        }
+    },
+    "render 0000": {
+        "scene creation time": {
+            "microseconds": 381980,
+            "machine utilization": {
+                "percent": 0.12782901525497437
+            },
+            "plugin loading": {
+                "microseconds": 67277
+            },
+            ".ass parsing": {
+                "microseconds": 73957
+            },
+            "unaccounted": {
+                "microseconds": 240746
+            }
+        },
+        "frame time": {
+            "microseconds": 822106,
+            "machine utilization": {
+                "percent": 46.98061752319336
+            },
+            "node init": {
+                "microseconds": 2957,
+                "sanity checks": {
+                    "microseconds": 1
+                },
+                ".ass parsing (procs)": {
+                    "microseconds": 0
+                }
+            },
+            "driver init/close": {
+                "microseconds": 17024
+            },
+            "rendering": {
+                "microseconds": 453206,
+                "subdivision": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "mesh processing": {
+                    "microseconds": 0
+                },
+                "threads blocked": {
+                    "microseconds": 0
+                },
+                "displacement": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "accel. building": {
+                    "microseconds": 0
+                },
+                "importance maps": {
+                    "microseconds": 0
+                },
+                "point cloud building": {
+                    "microseconds": 0
+                },
+                "output driver": {
+                    "microseconds": 82
+                },
+                "pixel rendering": {
+                    "microseconds": 453124
+                }
+            },
+            "unaccounted": {
+                "microseconds": 348919
+            }
+        },
+        "top session self-times by category": {
+            "worker waiting": {
+                "microseconds": 398734,
+                "percent": 99.39349365234375
+            },
+            "Plugin loader": {
+                "microseconds": 1079,
+                "percent": 0.2691165804862976
+            },
+            "writeBucket": {
+                "microseconds": 840,
+                "percent": 0.20952105522155763
+            },
+            "driver_close (/out/arnold_1:exr:cam1)": {
+                "microseconds": 186,
+                "percent": 0.04653210565447807
+            },
+            "loadFile": {
+                "microseconds": 138,
+                "percent": 0.03462935984134674
+            },
+            "driver_open (/out/arnold_1:exr:cam1)": {
+                "microseconds": 92,
+                "percent": 0.023081045597791673
+            }
+        },
+        "top session self-times by node": {
+            "worker waiting": {
+                "microseconds": 398734,
+                "percent": 99.39349365234375
+            },
+            "Plugin loader": {
+                "microseconds": 1079,
+                "percent": 0.2691165804862976
+            },
+            "writeBucket": {
+                "microseconds": 840,
+                "percent": 0.20952105522155763
+            },
+            "driver_exr:/out/arnold_1:exr:cam1": {
+                "microseconds": 326,
+                "percent": 0.08133673667907715
+            },
+            "loadFile": {
+                "microseconds": 138,
+                "percent": 0.03462935984134674
+            },
+            "initializeAllNodes": {
+                "microseconds": 47,
+                "percent": 0.011894957162439824
+            }
+        },
+        "peak CPU memory used": {
+            "bytes": 322035712,
+            "at startup": {
+                "bytes": 35659776
+            },
+            "plugins": {
+                "bytes": 823296
+            },
+            "AOV samples": {
+                "bytes": 15237156864
+            },
+            "output buffers": {
+                "bytes": 3560349696
+            },
+            "node overhead": {
+                "bytes": 13675
+            },
+            "instance overhead": {
+                "bytes": 0
+            },
+            "message passing": {
+                "bytes": 131584
+            },
+            "memory pools": {
+                "bytes": 10534912
+            },
+            "geometry": {
+                "bytes": 2020,
+                "polymesh": {
+                    "bytes": 2020
+                },
+                "subdivs": {
+                    "bytes": 0
+                },
+                "nurbs": {
+                    "bytes": 0
+                },
+                "points": {
+                    "bytes": 0
+                },
+                "curves": {
+                    "bytes": 0
+                }
+            },
+            "accel. structs": {
+                "bytes": 0
+            },
+            "skydome importance map": {
+                "bytes": 0
+            },
+            "quad importance map": {
+                "bytes": 0
+            },
+            "mesh importance map": {
+                "bytes": 0
+            },
+            "pointcloud": {
+                "bytes": 0
+            },
+            "strings": {
+                "bytes": 12584960
+            },
+            "texture cache": {
+                "bytes": 0
+            },
+            "profiler": {
+                "bytes": 6912
+            },
+            "externally allocated": {
+                "bytes": 0
+            },
+            "unaccounted": {
+                "bytes": -18535227983
+            }
+        },
+        "geometry": {
+            "lists": {
+                "count": 1,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.0
+            },
+            "polymeshes": {
+                "count": 5,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.001926422119140625,
+                "final mem MB": 0.001926422119140625
+            },
+            "simple": {
+                "count": 1,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.0
+            }
+        },
+        "geometric elements": {
+            "polygons": {
+                "elements": 5,
+                "min": 1,
+                "avg": 1.0,
+                "max": 1
+            }
+        },
+        "number of warnings by type": {
+            "node \"%s\" is already installed": 5
+        },
+        "iteration": 0
+    }
+}

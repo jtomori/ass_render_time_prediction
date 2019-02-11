@@ -1,0 +1,265 @@
+{
+    "JSON log version": 2,
+    "Arnold version": {
+        "arch": "5",
+        "major": "2",
+        "minor": "2",
+        "fix": "1",
+        "git hash": "2dff6c07",
+        "full": "Arnold 5.2.2.1 [2dff6c07] windows icc-17.0.2 oiio-2.1.0 osl-1.11.0 vdb-4.0.0 clm-1.0.3.513 rlm-12.4.2 2019/01/10 05:42:47"
+    },
+    "timestamp": "2019-02-09T20:43:56Z",
+    "hostname": "DAYWALKER053",
+    "OS": "Windows 8 (version 6.2, build 9200)",
+    "CPU info": {
+        "name": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+        "processors": 2,
+        "physical cores": 24,
+        "logical cores": 48,
+        "available cores": 48,
+        "memory capacity": {
+            "bytes": 137206489088
+        },
+        "full": "2 x Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz (24 cores, 48 logical) with 130850MB"
+    },
+    "render 0000": {
+        "scene creation time": {
+            "microseconds": 116072,
+            "machine utilization": {
+                "percent": 0.0
+            },
+            "plugin loading": {
+                "microseconds": 32028
+            },
+            ".ass parsing": {
+                "microseconds": 34225
+            },
+            "unaccounted": {
+                "microseconds": 49819
+            }
+        },
+        "frame time": {
+            "microseconds": 3238528,
+            "machine utilization": {
+                "percent": 70.13941192626953
+            },
+            "node init": {
+                "microseconds": 829,
+                "sanity checks": {
+                    "microseconds": 0
+                },
+                ".ass parsing (procs)": {
+                    "microseconds": 0
+                }
+            },
+            "driver init/close": {
+                "microseconds": 88217
+            },
+            "rendering": {
+                "microseconds": 2671555,
+                "subdivision": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "mesh processing": {
+                    "microseconds": 0
+                },
+                "threads blocked": {
+                    "microseconds": 0
+                },
+                "displacement": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "accel. building": {
+                    "microseconds": 0
+                },
+                "importance maps": {
+                    "microseconds": 0
+                },
+                "point cloud building": {
+                    "microseconds": 0
+                },
+                "output driver": {
+                    "microseconds": 5457
+                },
+                "pixel rendering": {
+                    "microseconds": 2666098
+                }
+            },
+            "unaccounted": {
+                "microseconds": 477927
+            }
+        },
+        "top session self-times by category": {
+            "worker waiting": {
+                "microseconds": 295417,
+                "percent": 88.40855407714844
+            },
+            "writeBucket": {
+                "microseconds": 30269,
+                "percent": 9.058691024780274
+            },
+            "driver_process_bucket (/out/arnold_1:exr:cam1)": {
+                "microseconds": 5208,
+                "percent": 1.5588719844818116
+            },
+            "driver_close (/out/arnold_1:exr:cam1)": {
+                "microseconds": 976,
+                "percent": 0.2922273278236389
+            },
+            "thread blocked": {
+                "microseconds": 653,
+                "percent": 0.1954583078622818
+            },
+            "driver_open (/out/arnold_1:exr:cam1)": {
+                "microseconds": 650,
+                "percent": 0.19480367004871369
+            }
+        },
+        "top session self-times by node": {
+            "worker waiting": {
+                "microseconds": 295417,
+                "percent": 88.40855407714844
+            },
+            "writeBucket": {
+                "microseconds": 30269,
+                "percent": 9.058691024780274
+            },
+            "driver_exr:/out/arnold_1:exr:cam1": {
+                "microseconds": 6836,
+                "percent": 2.045902967453003,
+                "driver_process_bucket": {
+                    "microseconds": 5208,
+                    "percent": 1.5588719844818116
+                }
+            },
+            "thread blocked": {
+                "microseconds": 653,
+                "percent": 0.1954583078622818
+            },
+            "Plugin loader": {
+                "microseconds": 648,
+                "percent": 0.19399937987327577
+            },
+            "loadFile": {
+                "microseconds": 325,
+                "percent": 0.0973924770951271
+            }
+        },
+        "peak CPU memory used": {
+            "bytes": 2606788608,
+            "at startup": {
+                "bytes": 35667968
+            },
+            "plugins": {
+                "bytes": 765952
+            },
+            "AOV samples": {
+                "bytes": 5774905530
+            },
+            "output buffers": {
+                "bytes": 2267852800
+            },
+            "node overhead": {
+                "bytes": 13675
+            },
+            "instance overhead": {
+                "bytes": 0
+            },
+            "message passing": {
+                "bytes": 98688
+            },
+            "memory pools": {
+                "bytes": 10534912
+            },
+            "geometry": {
+                "bytes": 2020,
+                "polymesh": {
+                    "bytes": 2020
+                },
+                "subdivs": {
+                    "bytes": 0
+                },
+                "nurbs": {
+                    "bytes": 0
+                },
+                "points": {
+                    "bytes": 0
+                },
+                "curves": {
+                    "bytes": 0
+                }
+            },
+            "accel. structs": {
+                "bytes": 0
+            },
+            "skydome importance map": {
+                "bytes": 0
+            },
+            "quad importance map": {
+                "bytes": 0
+            },
+            "mesh importance map": {
+                "bytes": 0
+            },
+            "pointcloud": {
+                "bytes": 0
+            },
+            "strings": {
+                "bytes": 12584960
+            },
+            "texture cache": {
+                "bytes": 0
+            },
+            "profiler": {
+                "bytes": 5824
+            },
+            "externally allocated": {
+                "bytes": 0
+            },
+            "unaccounted": {
+                "bytes": -5495643721
+            }
+        },
+        "geometry": {
+            "lists": {
+                "count": 1,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.0
+            },
+            "polymeshes": {
+                "count": 5,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.001926422119140625,
+                "final mem MB": 0.001926422119140625
+            },
+            "simple": {
+                "count": 1,
+                "percent hit": 0.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.0
+            }
+        },
+        "geometric elements": {
+            "polygons": {
+                "elements": 5,
+                "min": 1,
+                "avg": 1.0,
+                "max": 1
+            }
+        },
+        "number of warnings by type": {
+            "node \"%s\" is already installed": 5
+        },
+        "iteration": 0
+    }
+}

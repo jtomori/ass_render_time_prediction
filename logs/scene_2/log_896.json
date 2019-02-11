@@ -1,0 +1,600 @@
+{
+    "JSON log version": 2,
+    "Arnold version": {
+        "arch": "5",
+        "major": "2",
+        "minor": "2",
+        "fix": "1",
+        "git hash": "2dff6c07",
+        "full": "Arnold 5.2.2.1 [2dff6c07] windows icc-17.0.2 oiio-2.1.0 osl-1.11.0 vdb-4.0.0 clm-1.0.3.513 rlm-12.4.2 2019/01/10 05:42:47"
+    },
+    "timestamp": "2019-02-09T21:09:23Z",
+    "hostname": "DAYWALKER051",
+    "OS": "Windows 8 (version 6.2, build 9200)",
+    "CPU info": {
+        "name": "Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz",
+        "processors": 2,
+        "physical cores": 24,
+        "logical cores": 48,
+        "available cores": 48,
+        "memory capacity": {
+            "bytes": 137206489088
+        },
+        "full": "2 x Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz (24 cores, 48 logical) with 130850MB"
+    },
+    "render 0000": {
+        "scene creation time": {
+            "microseconds": 115548,
+            "machine utilization": {
+                "percent": 0.0
+            },
+            "plugin loading": {
+                "microseconds": 32835
+            },
+            ".ass parsing": {
+                "microseconds": 32929
+            },
+            "unaccounted": {
+                "microseconds": 49784
+            }
+        },
+        "frame time": {
+            "microseconds": 136472172,
+            "machine utilization": {
+                "percent": 98.0439682006836
+            },
+            "node init": {
+                "microseconds": 583,
+                "sanity checks": {
+                    "microseconds": 0
+                },
+                ".ass parsing (procs)": {
+                    "microseconds": 0
+                }
+            },
+            "driver init/close": {
+                "microseconds": 195522
+            },
+            "rendering": {
+                "microseconds": 136086742,
+                "subdivision": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "mesh processing": {
+                    "microseconds": 0
+                },
+                "threads blocked": {
+                    "microseconds": 0
+                },
+                "displacement": {
+                    "microseconds": 0,
+                    "threads blocked": {
+                        "microseconds": 0
+                    }
+                },
+                "accel. building": {
+                    "microseconds": 11
+                },
+                "importance maps": {
+                    "microseconds": 0
+                },
+                "point cloud building": {
+                    "microseconds": 0
+                },
+                "output driver": {
+                    "microseconds": 988
+                },
+                "pixel rendering": {
+                    "microseconds": 136085743
+                }
+            },
+            "unaccounted": {
+                "microseconds": 189325
+            }
+        },
+        "top session self-times by category": {
+            "surface closure": {
+                "microseconds": 55752304,
+                "percent": 41.67935562133789,
+                "right_srf": {
+                    "microseconds": 13537628,
+                    "percent": 10.120471954345704
+                },
+                "left_srf": {
+                    "microseconds": 13338767,
+                    "percent": 9.971807479858399
+                },
+                "top_srf": {
+                    "microseconds": 10340085,
+                    "percent": 7.730050086975098
+                },
+                "bottom_srf": {
+                    "microseconds": 9328052,
+                    "percent": 6.973473072052002
+                },
+                "back_srf": {
+                    "microseconds": 8864047,
+                    "percent": 6.626591682434082
+                }
+            },
+            "AiLightsPrepare": {
+                "microseconds": 40985344,
+                "percent": 30.63985824584961,
+                "right": {
+                    "microseconds": 11990090,
+                    "percent": 8.96356201171875
+                },
+                "left": {
+                    "microseconds": 11882930,
+                    "percent": 8.883450508117676
+                },
+                "bottom": {
+                    "microseconds": 10576044,
+                    "percent": 7.906447887420654
+                },
+                "back": {
+                    "microseconds": 5023433,
+                    "percent": 3.755422830581665
+                },
+                "top": {
+                    "microseconds": 1377155,
+                    "percent": 1.029535174369812
+                }
+            },
+            "BVH::intersect (root)": {
+                "microseconds": 9401449,
+                "percent": 7.028343200683594
+            },
+            "standard_surface": {
+                "microseconds": 8800201,
+                "percent": 6.578861713409424,
+                "right_srf": {
+                    "microseconds": 1975330,
+                    "percent": 1.476719617843628
+                },
+                "top_srf": {
+                    "microseconds": 1963672,
+                    "percent": 1.4680039882659913
+                },
+                "left_srf": {
+                    "microseconds": 1962112,
+                    "percent": 1.4668375253677369
+                },
+                "bottom_srf": {
+                    "microseconds": 1725980,
+                    "percent": 1.290310025215149
+                },
+                "back_srf": {
+                    "microseconds": 759494,
+                    "percent": 0.567783534526825
+                }
+            },
+            "ray traversal+intersection": {
+                "microseconds": 6121583,
+                "percent": 4.57637882232666
+            },
+            "polymesh::intersect": {
+                "microseconds": 5503848,
+                "percent": 4.114571571350098,
+                "top": {
+                    "microseconds": 1361004,
+                    "percent": 1.017460823059082
+                },
+                "left": {
+                    "microseconds": 1342052,
+                    "percent": 1.003292441368103
+                },
+                "right": {
+                    "microseconds": 1201539,
+                    "percent": 0.8982482552528381
+                },
+                "bottom": {
+                    "microseconds": 1134140,
+                    "percent": 0.8478615283966065
+                }
+            }
+        },
+        "top session self-times by node": {
+            "standard_surface:right_srf": {
+                "microseconds": 17273377,
+                "percent": 12.913247108459473,
+                "surface closure": {
+                    "microseconds": 13537628,
+                    "percent": 10.12047290802002
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 777959,
+                    "percent": 0.581587553024292
+                }
+            },
+            "standard_surface:left_srf": {
+                "microseconds": 17133226,
+                "percent": 12.808472633361817,
+                "surface closure": {
+                    "microseconds": 13338767,
+                    "percent": 9.971808433532715
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 787751,
+                    "percent": 0.5889080762863159
+                }
+            },
+            "polymesh:right": {
+                "microseconds": 14566700,
+                "percent": 10.889786720275879,
+                "AiLightsPrepare": {
+                    "microseconds": 11990090,
+                    "percent": 8.963562965393067
+                },
+                "polymesh::intersect": {
+                    "microseconds": 1201539,
+                    "percent": 0.8982483148574829
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 832048,
+                    "percent": 0.6220232844352722
+                }
+            },
+            "polymesh:left": {
+                "microseconds": 14531962,
+                "percent": 10.863818168640137,
+                "AiLightsPrepare": {
+                    "microseconds": 11882930,
+                    "percent": 8.883451461791993
+                },
+                "polymesh::intersect": {
+                    "microseconds": 1342052,
+                    "percent": 1.003292441368103
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 778653,
+                    "percent": 0.5821061134338379
+                }
+            },
+            "standard_surface:top_srf": {
+                "microseconds": 14100125,
+                "percent": 10.540984153747559,
+                "surface closure": {
+                    "microseconds": 10340085,
+                    "percent": 7.730050563812256
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 691822,
+                    "percent": 0.5171929597854614
+                }
+            },
+            "polymesh:bottom": {
+                "microseconds": 12842477,
+                "percent": 9.600790977478028,
+                "AiLightsPrepare": {
+                    "microseconds": 10576044,
+                    "percent": 7.906448841094971
+                },
+                "polymesh::intersect": {
+                    "microseconds": 1134140,
+                    "percent": 0.8478615880012512
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 673129,
+                    "percent": 0.5032190084457398
+                }
+            },
+            "standard_surface:bottom_srf": {
+                "microseconds": 12449650,
+                "percent": 9.307120323181153,
+                "surface closure": {
+                    "microseconds": 9328052,
+                    "percent": 6.97347354888916
+                }
+            },
+            "standard_surface:back_srf": {
+                "microseconds": 10724270,
+                "percent": 8.01725959777832,
+                "surface closure": {
+                    "microseconds": 8864047,
+                    "percent": 6.62659215927124
+                },
+                "ray traversal+intersection": {
+                    "microseconds": 710211,
+                    "percent": 0.5309404134750366
+                }
+            },
+            "list_aggregate:root (BVH::intersect)": {
+                "microseconds": 9401449,
+                "percent": 7.028343677520752
+            },
+            "polymesh:back": {
+                "microseconds": 6023815,
+                "percent": 4.503289699554443,
+                "AiLightsPrepare": {
+                    "microseconds": 5023433,
+                    "percent": 3.755423069000244
+                }
+            },
+            "polymesh:top": {
+                "microseconds": 2738160,
+                "percent": 2.0469963550567629,
+                "AiLightsPrepare": {
+                    "microseconds": 1377155,
+                    "percent": 1.029535174369812
+                },
+                "polymesh::intersect": {
+                    "microseconds": 1361004,
+                    "percent": 1.0174609422683716
+                }
+            }
+        },
+        "peak CPU memory used": {
+            "bytes": 439459840,
+            "at startup": {
+                "bytes": 35639296
+            },
+            "plugins": {
+                "bytes": 745472
+            },
+            "AOV samples": {
+                "bytes": 3635054208
+            },
+            "output buffers": {
+                "bytes": 1107451904
+            },
+            "node overhead": {
+                "bytes": 13675
+            },
+            "instance overhead": {
+                "bytes": 0
+            },
+            "message passing": {
+                "bytes": 98688
+            },
+            "memory pools": {
+                "bytes": 35702272
+            },
+            "geometry": {
+                "bytes": 1898,
+                "polymesh": {
+                    "bytes": 1890
+                },
+                "subdivs": {
+                    "bytes": 0
+                },
+                "nurbs": {
+                    "bytes": 0
+                },
+                "points": {
+                    "bytes": 0
+                },
+                "curves": {
+                    "bytes": 0
+                }
+            },
+            "accel. structs": {
+                "bytes": 8284
+            },
+            "skydome importance map": {
+                "bytes": 0
+            },
+            "quad importance map": {
+                "bytes": 0
+            },
+            "mesh importance map": {
+                "bytes": 0
+            },
+            "pointcloud": {
+                "bytes": 0
+            },
+            "strings": {
+                "bytes": 12584960
+            },
+            "texture cache": {
+                "bytes": 0
+            },
+            "profiler": {
+                "bytes": 43543104
+            },
+            "externally allocated": {
+                "bytes": 0
+            },
+            "unaccounted": {
+                "bytes": -4431383921
+            }
+        },
+        "ray counts": {
+            "camera": {
+                "ray count": 9609756,
+                "per pixel": 9.16457748413086,
+                "per sample": 1.0,
+                "percent": 0.35779234766960146,
+                "avg hits": 1.0,
+                "max hits": 1
+            },
+            "shadow": {
+                "ray count": 1070561885,
+                "per pixel": 1020.9673461914063,
+                "per sample": 111.40364837646485,
+                "percent": 39.859375,
+                "avg hits": 0.03502955660223961,
+                "max hits": 1
+            },
+            "diffuse_reflect": {
+                "ray count": 1605675597,
+                "per pixel": 1531.2916259765626,
+                "per sample": 167.08807373046876,
+                "percent": 59.782833099365237,
+                "avg hits": 0.8989739418029785,
+                "max hits": 2
+            },
+            "total": {
+                "ray count": 2685847238,
+                "per pixel": 2561.423583984375,
+                "per sample": 279.4917297363281,
+                "percent": 100.0,
+                "avg hits": 0.5549725890159607,
+                "max hits": 2
+            },
+            "percent by ray depth": [
+                3.5662161512701786,
+                41.686281228478417,
+                23.31096333930813,
+                13.587367436122218,
+                7.961329779843569,
+                4.654841132852248,
+                2.7210764992882296,
+                1.5866183451197458,
+                0.9253060877172642
+            ]
+        },
+        "shader calls": {
+            "primary": {
+                "calls": 1453070303,
+                "per pixel": 1385.7558279037476,
+                "per sample": 151.20782494373428,
+                "percent total": 100.0
+            },
+            "total": {
+                "calls": 1453070303,
+                "per pixel": 1385.7558279037476,
+                "per sample": 151.20782494373428,
+                "percent total": 100.0
+            }
+        },
+        "percent by ray depth": [
+            0.6613414354528998,
+            42.57185249212267,
+            23.72934532404383,
+            14.251857709323787,
+            8.339394573670536,
+            4.9113467430075199,
+            2.872923072876261,
+            1.6806769052797855,
+            0.9812617442227088
+        ],
+        "geometry": {
+            "lists": {
+                "count": 1,
+                "percent hit": 100.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.0
+            },
+            "polymeshes": {
+                "count": 5,
+                "percent hit": 100.0,
+                "instances": 0,
+                "init mem MB": 0.001926422119140625,
+                "final mem MB": 0.0018024444580078126
+            },
+            "simple": {
+                "count": 1,
+                "percent hit": 100.0,
+                "instances": 0,
+                "init mem MB": 0.0,
+                "final mem MB": 0.00000762939453125
+            }
+        },
+        "geometric elements": {
+            "polygons": {
+                "elements": 5,
+                "min": 1,
+                "avg": 1.0,
+                "max": 1
+            }
+        },
+        "triangle tessellation": {
+            "polymeshes": {
+                "count": 10,
+                "min": 2,
+                "avg": 2.0,
+                "max": 2,
+                "per element": 2.0,
+                "percent": 100.0
+            },
+            "unique triangles": 10,
+            "CPU memory use": {
+                "bytes": 1890,
+                "vertices": {
+                    "bytes": 240
+                },
+                "vertex indices": {
+                    "bytes": 125
+                },
+                "polygon base offsets": {
+                    "bytes": 0
+                },
+                "polygon IDs": {
+                    "bytes": 0
+                },
+                "triangulation": {
+                    "bytes": 0
+                },
+                "normals": {
+                    "bytes": 0
+                },
+                "packed normals": {
+                    "bytes": 0
+                },
+                "normal indices": {
+                    "bytes": 0
+                },
+                "smooth derivs": {
+                    "bytes": 0
+                },
+                "shader indices": {
+                    "bytes": 0
+                },
+                "uv coords": {
+                    "bytes": 0
+                },
+                "uv coords idxs": {
+                    "bytes": 0
+                },
+                "P reference (autobump)": {
+                    "bytes": 0
+                },
+                "N reference (autobump)": {
+                    "bytes": 0
+                },
+                "crease data": {
+                    "bytes": 0
+                },
+                "uniform indices": {
+                    "bytes": 125
+                },
+                "userdata": {
+                    "bytes": 0
+                }
+            },
+            "largest polymeshes by triangle count": {
+                "back": 2,
+                "left": 2,
+                "top": 2,
+                "bottom": 2,
+                "right": 2
+            }
+        },
+        "acceleration structures": {
+            "list": {
+                "count": 5,
+                "percent total": 83.33333333333333
+            },
+            "bvh": {
+                "count": 1,
+                "percent total": 16.666666666666669
+            },
+            "total": {
+                "count": 6,
+                "percent total": 100.0
+            }
+        },
+        "number of warnings by type": {
+            "node \"%s\" is already installed": 5
+        },
+        "performance warnings": [
+            "You are tracing 2561 rays per pixel. You may want to double check and reduce your sampling settings."
+        ],
+        "iteration": 0
+    }
+}
