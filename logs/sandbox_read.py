@@ -22,6 +22,10 @@ with open('test_scene_2.hipnc.json') as json_data:
 
 def rec(parent, data, rel_flat):
     for d, v in data.items():
+
+        if d.startswith("render 0"):
+           d = d.split(" ")[0]
+
         if isinstance(v, dict):
             rec("{0}/{1}".format(parent,d), v, rel_flat)
 
