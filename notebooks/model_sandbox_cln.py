@@ -10,7 +10,7 @@ from tensorflow.keras import layers
 import matplotlib.pyplot as plt
 import os
 import glob
-
+import utils
 EPOCHS = 1000
 
 
@@ -33,11 +33,11 @@ def load_data(path_dir = "../datasets/dataset_a.csv", *args):
 
 	dataset.isna().sum()
 
-	dataset["ar_AA_samples"] = dataset["ar_AA_samples"]**2
-	dataset["ar_GI_diffuse_samples"] = dataset["ar_GI_diffuse_samples"]**2
-	dataset["ar_GI_specular_samples"] = dataset["ar_GI_specular_samples"]**2
-	dataset["pixels"] = dataset["res_overridey"] * dataset["res_overridex"]
-	dataset["render_seconds"] = dataset["/render/frame time/rendering/microseconds"]/(10**6)
+	dataset["ar_AA_samples"] = utils.to_square(dataset["ar_AA_samples"])
+	dataset["ar_GI_diffuse_samples"] = utils.to_square(dataset["ar_GI_diffuse_samples"])
+	dataset["ar_GI_specular_samples"] = utils.to_square(dataset["ar_GI_specular_samples"])
+	dataset["pixels"] = utils.to_pixels(dataset["res_overridey"], dataset["res_overridex"])
+	dataset["render_seconds"] = utils.to_seconds(dataset["/render/frame time/rendering/microseconds"])
 
 	dataset = dataset.drop(columns=["res_overridey", "res_overridex", "/render/frame time/rendering/microseconds"])
 	dataset.tail()
@@ -87,6 +87,7 @@ def predict_from_ckp(model, checkpoint, normed_test_data, test_labels, *args):
 	#evaluate
 	loss, mae, mse = model.evaluate(normed_test_data, test_labels, verbose=0)
 	#predict
+	print(type(normed_test_data))
 	predictions = predict(model, normed_test_data)
 	#plot
 	plot_data(test_labels, predictions)
