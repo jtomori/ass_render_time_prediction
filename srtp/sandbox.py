@@ -6,7 +6,7 @@ import sklearn.datasets
 import tensorflow as tf
 
 samples = np.arange(0.1, 500.0, 1.0)
-seconds_plus_bias = samples ** 1.3 + np.random.rand(*samples.shape) * 500
+seconds_plus_bias = samples ** 2 + np.random.rand(*samples.shape) * 500
 test_block = np.random.randint( size=(20), low=5, high=495)
 samples_test, seconds_test = [], []
 seconds_train, samples_training = [], []
